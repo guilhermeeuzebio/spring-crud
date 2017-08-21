@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<title>crud</title>
+</head>
+<body>
+	<form method="POST" th:action="@{/produto}"
+		th:object="${produto}">
+		<input type="hidden" th:field="*{idProduto}" /> <input
+			th:field="*{produtoNome}" type="text" placeholder="Nome do produto" />
+		<input th:field="*{descricao}" type="text" placeholder="Descrição" />
+		<input th:field="*{preco}" type="text" placeholder="Preço" />
+		<button type="submit">Editar</button>
+	</form>
+</body>
+</html>

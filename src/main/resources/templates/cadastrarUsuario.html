@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<title>crud</title>
+</head>
+<body>
+	<form method="POST" th:action="@{/cadastrar}" th:object="${usuario}">
+		<input th:field="*{nome}" type="text" placeholder="Nome" /> <input
+			th:field="*{email}" type="email" placeholder="Email" /> <input
+			th:field="*{senha}" type="password" placeholder="Senha" /> <input
+			th:field="*{confirmaSenha}" type="password" placeholder="Confirma senha" />
+		<button type="submit">Criar conta</button>
+	</form>
+</body>
+</html>

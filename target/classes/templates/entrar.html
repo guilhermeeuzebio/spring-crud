@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<title>crud</title>
+</head>
+<body>
+	<form th:action="@{/entrar}" method="POST">
+		<input name="email" type="email" placeholder="Email" /> <input
+			name="senha" type="password" placeholder="Senha" />
+		<div align="center" th:if="${param.error}">
+			<p style="font-size: 20; color: #FF1C19;">Email ou senha
+				inválidos</p>
+		</div>
+		<button name="Submit" value="entrar" type="submit" >Entrar</button>
+		<!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> -->
+	</form>
+</body>
+</html>

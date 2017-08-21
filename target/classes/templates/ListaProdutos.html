@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<title>crud</title>
+</head>
+<body>
+	<div class="container">
+		<div>
+			<h2>Lista de produtos</h2>
+			<table class="table table-striped">
+				<tr>
+					<th>Produto</th>
+					<th>Descrição</th>
+					<th>Preço</th>
+					<th>Ver</th>
+					<th>Editar</th>
+					<th>Excluir</th>
+				</tr>
+				<tr th:each="produto : ${produtoRepository}">
+					<td th:text="${produto.produtoNome}"></td>
+					<td th:text="${produto.descricao}"></td>
+					<td th:text="${produto.preco}"></td>
+					<td><a th:href="${'/produto/' + produto.idProduto}">Mostrar</a></td>
+					<td><a th:href="${'/produto/editar/' + produto.idProduto}">Editar</a></td>
+					<td><a th:href="${'/produto/excluir/' + produto.idProduto}">Excluir</a></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+	<div>
+		<a th:href="@{/cadastrar/produto}">Cadastrar produto</a>
+	</div>
+	<div class="container">
+		<form th:action="@{/logout}" method="get">
+			<button class="btn btn-md btn-danger btn-block" type="Submit">Sair</button>
+		</form>
+	</div>
+</body>
+</html>
